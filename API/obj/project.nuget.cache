@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j40XDJKzi28=",
+  "dgSpecHash": "7z3MskXeuZY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dorian Rizo\\Desktop\\curso\\projectosReact\\ReStoreV1\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\Dorian Rizo\\Desktop\\curso\\projectosReact\\ReStoreV1\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dorian Rizo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Dorian Rizo\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.5\\microsoft.aspnetcore.openapi.8.0.5.nupkg.sha512",

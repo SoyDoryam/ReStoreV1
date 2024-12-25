@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 namespace API.Controller
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
         public StoreContext Context { get; }
