@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { Catalog } from '../../features/catalog/Catalog.tsx';
+import Catalog from '../../features/catalog/Catalog.tsx';
+import { Product } from '../models/product.ts';
 
 const App = () => {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<Product>([])
 
   useEffect(() => { 
     fetch('http://localhost:5217/api/Products')
       .then(response => response.json())
       .then(data =>{
         setProducts(data)
-        console.log(data)
       })
     }, []);
 
@@ -18,8 +18,14 @@ const App = () => {
     setProducts(prevState => [
       ...prevState,
       {
-        name: `Product ${Math.floor(Math.random() *1000)}`, 
-        price: parseFloat((Math.random() * 500 + 100).toFixed(2)) // Precio aleatorio entre 100.00 y 600.00
+        id: prevState.length + 101,
+        name: `Product ${prevState.length + 1}`,
+        price: parseFloat((Math.random() * 500 + 100).toFixed(2)), // Precio aleatorio entre 100.00 y 600.00
+        brand: 'Some brand',
+        description: 'A new product',
+        pictureUrl: 'http://example.com/product.jpg',
+        type: 'General',
+        quantityInStock: 100,
       }
     ])
   }
@@ -27,15 +33,7 @@ const App = () => {
   return (
     <div>
       <h1>Re-Store</h1>
-      <Catalog />
-      <ul>
-        {products.map((product, index) => (
-          <li key={index}>
-            {product.name} - ${product.price}
-          </li>
-        ))}
-      </ul>
-      <button onClick={addProduct}>Add product</button>
+      <Catalog products={products} addProduct={addProduct}/>
     </div>
   )
 }
