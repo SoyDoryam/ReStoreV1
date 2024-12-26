@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import { Catalog } from '../../features/catalog/Catalog.tsx';
 
 const App = () => {
-  const [products, setProducts] = useState([
-    {name: 'Product 1', price: 100.00},
-    {name: 'Product 2', price: 200.00},
-    {name: 'Product 3', price: 300.00},
-  ])
+  const [products, setProducts] = useState([])
 
   useEffect(() => { 
     fetch('http://localhost:5217/api/Products')
       .then(response => response.json())
-      .then(data => setProducts(data))
+      .then(data =>{
+        setProducts(data)
+        console.log(data)
+      })
     }, []);
 
     console.log(products);
@@ -27,6 +27,7 @@ const App = () => {
   return (
     <div>
       <h1>Re-Store</h1>
+      <Catalog />
       <ul>
         {products.map((product, index) => (
           <li key={index}>
