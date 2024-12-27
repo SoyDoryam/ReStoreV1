@@ -1,5 +1,7 @@
 import React from 'react'
 import { Product } from '../../app/models/product';
+import { Button} from '@mui/material';
+import ProductList from './ProductList.tsx';
 
 interface Props{
     products: Product[];
@@ -9,16 +11,11 @@ interface Props{
 const Catalog = ({products, addProduct}: Props) => {
   return (
     <>
-        <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - ${product.price}
-          </li>
-        ))}
-      </ul>
-      <button onClick={addProduct}>Add product</button>
+      <ProductList products={products}/>
+      <Button variant='contained' onClick={addProduct}>Add product</Button>
     </>
   )
 }
 
 export default Catalog
+    
