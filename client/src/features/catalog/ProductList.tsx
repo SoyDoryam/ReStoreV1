@@ -1,11 +1,11 @@
-import {List } from '@mui/material'
-import React from 'react'
-import { Product } from '../../app/models/product';
-import ProductCard from './ProductCard.tsx';
+    import {List } from '@mui/material'
+    import React from 'react'
+    import { Product } from '../../app/models/product';
+    import ProductCard from './ProductCard.tsx';
 
-interface Props{
-    products: Product[];
-}
+    interface Props{
+        products: Product[];
+    }
 
 const ProductList = ({products}: Props) => {
   return (
@@ -16,4 +16,4 @@ const ProductList = ({products}: Props) => {
   </List>  )
 }
 
-export default ProductList
+    export default ProductList

@@ -1,7 +1,8 @@
-import Typography from '@mui/material/Typography';
 import React, { useEffect, useState } from 'react'
 import Catalog from '../../features/catalog/Catalog.tsx';
 import { Product } from '../models/product.ts';
+import Header from './Header.tsx';
+import { Container, CssBaseline } from '@mui/material';
 
 const App = () => {
   const [products, setProducts] = useState<Product[]>([])
@@ -33,8 +34,11 @@ const App = () => {
 
   return (
     <div>
-      <Typography variant='h1'>Re-Store</Typography>
-      <Catalog products={products} addProduct={addProduct}/>
+      <CssBaseline />
+      <Header />
+      <Container>
+        <Catalog products={products} addProduct={addProduct}/>
+      </Container>
     </div>
   )
 }
