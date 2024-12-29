@@ -1,5 +1,6 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography } from '@mui/material'
+import { AppBar, Switch, Toolbar, Typography } from '@mui/material'
+
 
 const Header = () => {
   return (
@@ -8,6 +9,7 @@ const Header = () => {
             <Typography variant="h6" >
                 Re-Store V1
             </Typography>
+            <Switch />
         </Toolbar>
     </AppBar>
   )
