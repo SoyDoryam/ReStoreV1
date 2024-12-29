@@ -8,13 +8,18 @@ const App = () => {
   const paletteType = darkMode ? 'dark' : 'light';
   const theme = createTheme({
     palette: {
-      mode: 'dark',
+      mode: paletteType,
     }
   });
+
+  function handleThemeChange(){
+    setDarkMode(!darkMode);
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header />
+      <Header darkMode={darkMode} handleThemeChange={handleThemeChange}/>
       <Container>
         <Catalog />
       </Container>
@@ -22,4 +27,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default App
